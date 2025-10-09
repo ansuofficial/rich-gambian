@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image"; // ✅ Next.js optimized image
 import { products } from "@/app/lib/products";
 import { ProductsTypes } from "./types/types";
 
@@ -11,14 +12,6 @@ import {
   Legend,
   Tooltip,
 } from "recharts";
-// import {
-//   ShoppingCart,
-//   TrendingDown,
-//   Share2,
-//   Download,
-//   X,
-//   Undo2,
-// } from "lucide-react";
 import { formatMoney } from "@/utils/utils";
 import Header from "./components/Header";
 import { COLORS, GAMBIA_GDP } from "@/utils/constants/constants";
@@ -29,7 +22,6 @@ export default function GambiaGDPSpender() {
   const [purchases, setPurchases] = useState<
     (ProductsTypes & { quantity: number })[]
   >([]);
-  // const [showInvoice, setShowInvoice] = useState(false);
   const [history, setHistory] = useState<
     (ProductsTypes & { action: string; time: number })[]
   >([]);
@@ -89,22 +81,6 @@ export default function GambiaGDPSpender() {
     return acc;
   }, []);
 
-  // const downloadInvoice = () => {
-  //   alert("Invoice download feature - would generate PDF/image in production!");
-  // };
-
-  // const shareInvoice = () => {
-  //   const text = `I just spent ${formatMoney(
-  //     totalSpent
-  //   )} of The Gambia's GDP! 🇬🇲\n\nTry it: [Your URL Here]`;
-  //   if (navigator.share) {
-  //     navigator.share({ text });
-  //   } else {
-  //     navigator.clipboard.writeText(text);
-  //     alert("Copied to clipboard!");
-  //   }
-  // };
-
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       <Header
@@ -124,11 +100,12 @@ export default function GambiaGDPSpender() {
                 className="relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm rounded overflow-hidden border border-slate-700/50 shadow-xl transition-all duration-300"
               >
                 <div className="flex flex-col gap-4 p-4">
-                  <div className="h-80 rounded overflow-hidden flex-shrink-0 bg-slate-700">
-                    <img
+                  <div className="h-80 rounded overflow-hidden flex-shrink-0 bg-slate-700 relative">
+                    <Image
                       src={product.image}
                       alt={product.name}
-                      className="object-cover h-full w-full"
+                      fill
+                      className="object-cover"
                     />
                   </div>
 
@@ -234,106 +211,6 @@ export default function GambiaGDPSpender() {
           </div>
         )}
       </div>
-
-      {/* Floating Actions */}
-      {/* {purchases.length > 0 && (
-        <div className="fixed bottom-6 left-0 right-0 px-4 flex gap-3 justify-center z-40">
-          <button
-            onClick={() => setShowInvoice(true)}
-            className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-full px-8 py-4 shadow-2xl font-bold text-lg transition-all active:scale-95 flex items-center gap-2"
-          >
-            <ShoppingCart size={24} />
-            View Invoice ({purchases.length})
-          </button>
-        </div>
-      )} */}
-
-      {/* Invoice Modal */}
-      {/* {showInvoice && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-end md:items-center justify-center p-4">
-          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-t-3xl md:rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-auto border border-slate-700 shadow-2xl">
-            <div className="sticky top-0 bg-slate-900/95 backdrop-blur-sm border-b border-slate-700 p-6 flex items-center justify-between">
-              <h2 className="text-2xl font-bold">🧾 Your Invoice</h2>
-              <button
-                onClick={() => setShowInvoice(false)}
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <X size={28} />
-              </button>
-            </div>
-
-            <div className="p-6">
-              <div className="text-center mb-6 pb-6 border-b border-dashed border-slate-700">
-                <div className="text-4xl mb-2">🇬🇲</div>
-                <h3 className="text-xl font-bold mb-2">
-                  The Gambia GDP Shopping Spree
-                </h3>
-                <p className="text-gray-400 text-sm">Official Receipt</p>
-              </div>
-
-              <div className="space-y-3 mb-6">
-                {purchases.map((item) => (
-                  <div
-                    key={item.id}
-                    className="flex items-center justify-between p-3 bg-slate-800/50 rounded-xl"
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">{item.emoji}</span>
-                      <div>
-                        <div className="font-semibold">{item.name}</div>
-                        <div className="text-sm text-gray-400">
-                          Qty: {item.quantity}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-bold text-orange-400">
-                        {formatMoney(item.price * item.quantity)}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="border-t border-dashed border-slate-700 pt-4 space-y-2 mb-6">
-                <div className="flex justify-between text-lg">
-                  <span className="text-gray-400">Original Balance:</span>
-                  <span className="font-mono">{formatMoney(GAMBIA_GDP)}</span>
-                </div>
-                <div className="flex justify-between text-lg">
-                  <span className="text-gray-400">Total Spent:</span>
-                  <span className="font-mono text-red-400">
-                    {formatMoney(totalSpent)}
-                  </span>
-                </div>
-                <div className="flex justify-between text-2xl font-bold border-t border-slate-700 pt-2">
-                  <span>Remaining:</span>
-                  <span className="text-emerald-400">
-                    {formatMoney(balance)}
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex gap-3">
-                <button
-                  onClick={shareInvoice}
-                  className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white rounded-xl py-3 font-semibold transition-all active:scale-95 flex items-center justify-center gap-2"
-                >
-                  <Share2 size={20} />
-                  Share
-                </button>
-                <button
-                  onClick={downloadInvoice}
-                  className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-xl py-3 font-semibold transition-all active:scale-95 flex items-center justify-center gap-2"
-                >
-                  <Download size={20} />
-                  Download
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )} */}
     </div>
   );
 }

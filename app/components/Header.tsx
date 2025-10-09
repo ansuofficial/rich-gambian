@@ -1,21 +1,25 @@
+import Image from "next/image";
 import { formatMoney } from "@/utils/utils";
 
-interface Header {
+interface HeaderProps {
   balance: number;
   percentSpent: string;
   totalSpent: number;
 }
 
-function Header({ balance, percentSpent, totalSpent }: Header) {
+function Header({ balance, percentSpent, totalSpent }: HeaderProps) {
   return (
     <div className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-lg">
       <div className="px-4 py-4">
         <div className="mb-4 text-center flex items-center justify-center gap-4">
-          <img
-            className="w-10 h-10 rounded-[10px] animate-pulse"
-            src="/gm.svg"
-            alt="The Gambian Flag"
-          />
+          <div className="relative w-8 h-6 rounded-[2px] animate-pulse overflow-hidden">
+            <Image
+              src="/gm.svg"
+              alt="The Gambian Flag"
+              fill
+              className="object-cover"
+            />
+          </div>
           <span className="text-xl font-bold text-emerald-400">
             Spend The Gambia&apos;s GDP
           </span>
