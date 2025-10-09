@@ -11,14 +11,14 @@ import {
   Legend,
   Tooltip,
 } from "recharts";
-import {
-  ShoppingCart,
-  TrendingDown,
-  Share2,
-  Download,
-  X,
-  Undo2,
-} from "lucide-react";
+// import {
+//   ShoppingCart,
+//   TrendingDown,
+//   Share2,
+//   Download,
+//   X,
+//   Undo2,
+// } from "lucide-react";
 import { formatMoney } from "@/utils/utils";
 import Header from "./components/Header";
 import { COLORS, GAMBIA_GDP } from "@/utils/constants/constants";
