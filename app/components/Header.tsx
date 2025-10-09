@@ -17,7 +17,7 @@ function Header({ balance, percentSpent, totalSpent }: Header) {
             alt="The Gambian Flag"
           />
           <span className="text-xl font-bold text-emerald-400">
-            Spend The Gambia's Money
+            Spend The Gambia&apos;s GDP
           </span>
         </div>
         <div className="text-center">
