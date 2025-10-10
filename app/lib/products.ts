@@ -146,11 +146,11 @@ export const products: ProductsTypes[] = [
     image: "/products/football-club.jpg",
   },
   {
-    id: 16,
-    name: "Surprise Mama with a New House",
-    price: 25000000,
-    category: "Family",
+    id: 17,
+    name: "Buy one Bitcoin",
+    price: 10771320,
+    category: "Envestment",
     emoji: "🏡",
-    image: "/products/mama-house.jpg",
+    image: "/products/bitcoin.png",
   },
 ];
