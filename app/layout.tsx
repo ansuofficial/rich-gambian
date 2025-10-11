@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Spend The Gambia's Money",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.jpeg",
         width: 1200,
         height: 630,
         alt: "Spend The Gambia's Money - Interactive Shopping Game",
