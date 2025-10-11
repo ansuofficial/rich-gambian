@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Spend The Gambia's Money | Interactive GDP Spending Game 🇬🇲",
+  title: "Spend The Gambia's Money | Interactive GDP Spending 🇬🇲",
   description:
     "Ever wondered what you could buy with a country's entire GDP? Spend The Gambia's GMD159.7 billion GDP on luxury items, real estate, and businesses. Interactive shopping game with live charts, invoice downloads, and social sharing. Educational and fun!",
   keywords:
