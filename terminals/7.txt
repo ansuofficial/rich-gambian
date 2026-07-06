@@ -1,0 +1,66 @@
+---
+pid: 13048
+cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
+command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npm run test:ci; npm run lint; npm run build"
+started_at: 2026-07-06T13:11:24.215Z
+running_for_ms: 8534997  
+---
+
+> spend-gambia-money@0.1.0 test:ci
+> vitest run
+
+
+ RUN  v4.1.10 C:/Users/hp/Documents/personal projects/spend-gambia-money
+
+ ✓ app/lib/share.test.ts (1 test) 40ms
+ ✓ app/hooks/use-spending.test.ts (6 tests) 42ms
+
+ Test Files  2 passed (2)
+      Tests  7 passed (7)
+   Start at  13:11:25
+   Duration  2.37s (transform 158ms, setup 0ms, import 783ms, tests 82ms, environment 3.14s)
+
+
+> spend-gambia-money@0.1.0 lint
+> eslint
+
+
+> spend-gambia-money@0.1.0 build
+> next build --turbopack
+
+   ▲ Next.js 15.5.4 (Turbopack)
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+   Creating an optimized production build ...
+ ✓ Finished writing to disk in 427ms
+ ✓ Compiled successfully in 8.3s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/8) ...
+   Generating static pages (2/8) 
+   Generating static pages (4/8) 
+   Generating static pages (6/8) 
+ ✓ Generating static pages (8/8)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                         Size  First Load JS
+┌ ○ /                              45 kB         226 kB
+├ ○ /_not-found                      0 B         181 kB
+├ ○ /manifest.webmanifest            0 B            0 B
+├ ○ /robots.txt                      0 B            0 B
+└ ○ /sitemap.xml                     0 B            0 B
++ First Load JS shared by all     195 kB
+  ├ chunks/2008ffcf9e5b170c.js     13 kB
+  ├ chunks/46d2acc67ccd928c.js   15.9 kB
+  ├ chunks/7d3450e7899e4cc5.js     14 kB
+  ├ chunks/c4d65d379119891f.js   12.8 kB
+  ├ chunks/dcb2adb2f10298a5.js   24.3 kB
+  └ chunks/f6d54413446dc3cc.js   75.1 kB
+  ├ chunks/15b46bbde77c6c84.css  13.5 kB
+  └ other shared chunks (total)  25.9 kB
+
+
+○  (Static)  prerendered as static content
+

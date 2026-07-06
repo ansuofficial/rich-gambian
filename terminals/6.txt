@@ -1,0 +1,46 @@
+---
+pid: 89396
+cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
+command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npm run build"
+started_at: 2026-07-06T12:37:53.101Z
+running_for_ms: 10545003 
+---
+
+> spend-gambia-money@0.1.0 build
+> next build --turbopack
+
+   ▲ Next.js 15.5.4 (Turbopack)
+
+   Creating an optimized production build ...
+ ✓ Finished writing to disk in 653ms
+ ✓ Compiled successfully in 10.3s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/6) ...
+   Generating static pages (1/6) 
+   Generating static pages (2/6) 
+   Generating static pages (4/6) 
+ ✓ Generating static pages (6/6)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+uncaughtException [Error: EPERM: operation not permitted, open 'C:\Users\hp\Documents\personal projects\spend-gambia-money\.next\trace'] {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\\.next\\trace'
+}
+Route (app)                         Size  First Load JS
+┌ ○ /                             134 kB         314 kB
+├ ○ /_not-found                      0 B         180 kB
+└ ○ /sitemap.xml                     0 B            0 B
++ First Load JS shared by all     194 kB
+  ├ chunks/4be8e331ab454f76.js   75.1 kB
+  ├ chunks/6068c569e3af8aa2.js   62.7 kB
+  ├ chunks/75a3f12660976f11.js     13 kB
+  ├ chunks/e876f1cb5f0f60df.css  13.4 kB
+  └ other shared chunks (total)  29.7 kB
+
+
+○  (Static)  prerendered as static content
+

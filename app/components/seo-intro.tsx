@@ -20,8 +20,8 @@ export function SeoIntro() {
           <span className="font-mono font-semibold text-foreground">
             {formatMoney(GAMBIA_GDP)}
           </span>{" "}
-          — The Gambia&apos;s GDP — on anything from benachin and school fees to
-          private islands and football clubs. Track your balance, explore
+          The Gambia&apos;s GDP on anything from benachin and school fees to
+          private islands and football clubs. track your balance, explore
           spending by category, and share a receipt when you&apos;re done.
         </p>
       </div>

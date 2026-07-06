@@ -1,0 +1,35 @@
+---
+pid: 66656
+cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
+command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npx shadcn@latest init -y -d"
+started_at: 2026-07-06T12:08:55.783Z
+running_for_ms: 12285000 
+---
+npm warn exec The following package was not found and will be installed: shadcn@4.13.0
+- Preflight checks.
+√ Preflight checks.
+- Verifying framework.
+√ Verifying framework. Found Next.js.
+- Validating Tailwind CSS. Found v4.
+√ Validating Tailwind CSS. Found v4.
+- Validating import alias.
+√ Validating import alias.
+- Writing components.json.
+√ Writing components.json.
+- Checking registry.
+√ Checking registry.
+- Installing dependencies.
+- Installing dependencies.
+√ Installing dependencies.
+- Updating fonts.
+√ Updating fonts.
+- Updating files.
+  - components\ui\button.tsx
+√ Created 2 files:
+  - lib\utils.ts
+
+- Updating app\globals.css
+Project initialization completed.
+You may now add components.
+
+√ Updating app\globals.css
