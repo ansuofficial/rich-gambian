@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Download, Loader2, MessageCircle, Share2 } from "lucide-react";
 import { toast } from "sonner";
 import { ReceiptData } from "@/app/types/types";
-import { useMediaQuery } from "@/app/hooks/use-media-query";
+import { useMediaQuery, useMounted } from "@/app/hooks/use-media-query";
 import { buildShareCaption, shareReceipt } from "@/app/lib/share";
 import { ShareReceiptCard } from "./share-receipt-card";
 import {
@@ -167,9 +167,10 @@ export function ShareReceiptDialog({
   onOpenChange,
   receiptData,
 }: ShareReceiptDialogProps) {
+  const mounted = useMounted();
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
-  if (isDesktop === undefined) {
+  if (!mounted) {
     return (
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent className="max-w-sm overflow-hidden">
