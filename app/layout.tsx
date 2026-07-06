@@ -3,6 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import { ThemeProvider } from "@/app/components/theme-provider";
+import { ThemeColorMeta } from "@/app/components/theme-color-meta";
+import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,9 +19,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rich-gambian.vercel.app"),
   title: "Spend The Gambia's Money | Interactive GDP Spending 🇬🇲",
   description:
-    "Ever wondered what you could buy with a country's entire GDP? Spend The Gambia's GMD159.7 billion GDP on luxury items, real estate, and businesses. Interactive shopping game with live charts, invoice downloads, and social sharing. Educational and fun!",
+    "Ever wondered what you could buy with a country's entire GDP? Spend The Gambia's GMD159.7 billion GDP on luxury items, real estate, and businesses. Interactive shopping game with live charts, receipt sharing, and social sharing. Educational and fun!",
   keywords:
     "spend money game Gambia, GDP simulator Gambia, Gambia economy, interactive budget game Gambia, money spending simulator Gambia, educational finance game Gambia, luxury shopping game Gambia",
   authors: [{ name: "Ansu Badjie" }],
@@ -42,7 +47,7 @@ export const metadata: Metadata = {
     title: "Spend The Gambia's Money 🇬🇲",
     description:
       "Interactive game where you spend an entire country's GDP! Buy islands, jets, and more.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.jpeg"],
   },
   robots: {
     index: true,
@@ -79,15 +84,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#1D3557" />
+        <meta
+          name="theme-color"
+          content="#FAFAF8"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#09090b"
+          media="(prefers-color-scheme: dark)"
+        />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>
+          <ThemeColorMeta />
+          <TooltipProvider>
+            {children}
+            <Toaster richColors closeButton position="top-center" />
+          </TooltipProvider>
+        </ThemeProvider>
         <Analytics />
         <Script
           id="structured-data"
