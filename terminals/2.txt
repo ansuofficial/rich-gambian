@@ -3,7 +3,7 @@ pid: 85512
 cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
 command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npm install next-themes html-to-image sonner; npm install -D vitest @testing-library/react jsdom"
 started_at: 2026-07-06T12:11:25.394Z
-running_for_ms: 12135012 
+running_for_ms: 19550011 
 ---
 
 added 3 packages, and audited 637 packages in 8s

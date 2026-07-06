@@ -3,7 +3,7 @@ pid: 18136
 cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
 command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npx @next/codemod@canary upgrade latest"
 started_at: 2026-07-06T13:33:06.569Z
-running_for_ms: 7235005  
+running_for_ms: 14650009 
 ---
 npm warn exec The following package was not found and will be installed: @next/codemod@16.3.0-canary.78
   Running in non-interactive mode. Every prompt will accept its default.

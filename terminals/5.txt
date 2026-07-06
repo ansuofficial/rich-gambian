@@ -3,7 +3,7 @@ pid: 29684
 cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
 command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npm run test:ci; npm run test:products; npm run build"
 started_at: 2026-07-06T12:17:50.453Z
-running_for_ms: 11750001 
+running_for_ms: 19164999 
 ---
 
 > spend-gambia-money@0.1.0 test:ci
