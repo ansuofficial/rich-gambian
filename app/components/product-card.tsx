@@ -11,6 +11,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { ProductIcon } from "@/app/lib/product-icons";
 
 interface ProductCardProps {
   product: ProductsTypes;
@@ -44,15 +45,16 @@ export function ProductCard({
         <div className="space-y-2">
           <div className="flex items-start justify-between gap-2">
             <h3 className="font-semibold leading-tight">{product.name}</h3>
-            <span className="text-lg" aria-hidden>
-              {product.emoji}
-            </span>
+            <ProductIcon
+              name={product.icon}
+              className="size-5 shrink-0 text-muted-foreground"
+            />
           </div>
           <Badge variant="secondary" className="font-normal">
             {product.category}
           </Badge>
         </div>
-        <p className="font-mono text-2xl font-bold text-gambia-red">
+        <p className="font-mono text-2xl font-bold text-foreground">
           {formatMoney(product.price)}
         </p>
       </CardContent>
