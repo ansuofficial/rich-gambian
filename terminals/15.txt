@@ -3,7 +3,7 @@ pid: 113748
 cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
 command: "npm run lint"
 started_at: 2026-07-06T13:57:27.874Z
-running_for_ms: 5770002  
+running_for_ms: 13189997 
 ---
 
 > spend-gambia-money@0.1.0 lint

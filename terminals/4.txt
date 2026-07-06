@@ -3,7 +3,7 @@ pid: 95668
 cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
 command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npm install -D tsx"
 started_at: 2026-07-06T12:16:57.545Z
-running_for_ms: 11800000 
+running_for_ms: 19220008 
 ---
 
 added 3 packages, and audited 718 packages in 15s

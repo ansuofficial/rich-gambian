@@ -3,7 +3,7 @@ pid: 11392
 cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
 command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npm install -D eslint@^9.39.0; npm run lint"
 started_at: 2026-07-06T13:44:48.124Z
-running_for_ms: 6529996  
+running_for_ms: 13950005 
 ---
 
 added 13 packages, removed 9 packages, changed 9 packages, and audited 724 packages in 7s

@@ -3,7 +3,7 @@ pid: 66656
 cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
 command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npx shadcn@latest init -y -d"
 started_at: 2026-07-06T12:08:55.783Z
-running_for_ms: 12285000 
+running_for_ms: 19700014 
 ---
 npm warn exec The following package was not found and will be installed: shadcn@4.13.0
 - Preflight checks.

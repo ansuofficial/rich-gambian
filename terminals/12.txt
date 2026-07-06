@@ -3,7 +3,7 @@ pid: 112772
 cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
 command: "npm run build"
 started_at: 2026-07-06T13:51:11.182Z
-running_for_ms: 6149999  
+running_for_ms: 13565004 
 ---
 
 > spend-gambia-money@0.1.0 build
