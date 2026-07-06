@@ -7,75 +7,29 @@ import { ThemeProvider } from "@/app/components/theme-provider";
 import { ThemeColorMeta } from "@/app/components/theme-color-meta";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import {
+  buildPageMetadata,
+  buildStructuredData,
+  SITE_URL,
+} from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rich-gambian.vercel.app"),
-  title: "Spend The Gambia's Money | Interactive GDP Spending 🇬🇲",
-  description:
-    "Ever wondered what you could buy with a country's entire GDP? Spend The Gambia's GMD159.7 billion GDP on luxury items, real estate, and businesses. Interactive shopping game with live charts, receipt sharing, and social sharing. Educational and fun!",
-  keywords:
-    "spend money game Gambia, GDP simulator Gambia, Gambia economy, interactive budget game Gambia, money spending simulator Gambia, educational finance game Gambia, luxury shopping game Gambia",
-  authors: [{ name: "Ansu Badjie" }],
-  openGraph: {
-    title: "Spend The Gambia's Money 🇬🇲",
-    description:
-      "Interactive game: Spend GMD159.7 billion on private islands, yachts, jets & more! See what a country's wealth can really buy.",
-    type: "website",
-    locale: "en_US",
-    siteName: "Spend The Gambia's Money",
-    images: [
-      {
-        url: "/og-image.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Spend The Gambia's Money - Interactive Shopping Game",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Spend The Gambia's Money 🇬🇲",
-    description:
-      "Interactive game where you spend an entire country's GDP! Buy islands, jets, and more.",
-    images: ["/og-image.jpeg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: "https://rich-gambian.vercel.app",
-  },
-};
-
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Spend The Gambia's Money",
-  description:
-    "Interactive money spending game where you shop with an entire country's GDP",
-  applicationCategory: "Game",
-  operatingSystem: "Any",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "GMD",
-  },
-  browserRequirements: "Requires JavaScript",
-  author: {
-    "@type": "Person",
-    name: "Ansu Badjie",
-  },
+  metadataBase: new URL(SITE_URL),
+  ...buildPageMetadata(),
 };
 
 export default function RootLayout({
@@ -83,6 +37,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = buildStructuredData();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -112,6 +68,7 @@ export default function RootLayout({
         <Script
           id="structured-data"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData),
           }}

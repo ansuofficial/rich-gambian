@@ -18,6 +18,7 @@ interface ProductCardProps {
   quantity: number;
   canBuy: boolean;
   balance: number;
+  priorityImage?: boolean;
   onBuy: (product: ProductsTypes) => void;
   onSell: (product: ProductsTypes) => void;
 }
@@ -27,6 +28,7 @@ export function ProductCard({
   quantity,
   canBuy,
   balance,
+  priorityImage = false,
   onBuy,
   onSell,
 }: ProductCardProps) {
@@ -35,10 +37,12 @@ export function ProductCard({
       <div className="relative aspect-[4/3] w-full bg-muted">
         <Image
           src={product.image}
-          alt={product.name}
+          alt={`${product.name} — ${product.category} item in the Gambia GDP spending game`}
           fill
           className="object-cover"
-          sizes="(max-width: 640px) 100vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          priority={priorityImage}
+          loading={priorityImage ? undefined : "lazy"}
         />
       </div>
       <CardContent className="space-y-3 pt-4">

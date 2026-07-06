@@ -1,6 +1,6 @@
 export const GAMBIA_GDP = 159700000000;
 
-export const SITE_URL = "https://rich-gambian.vercel.app";
+export { SITE_URL } from "@/lib/seo";
 
 export const SHARE_ENABLED =
   process.env.NEXT_PUBLIC_ENABLE_SHARE !== "false";

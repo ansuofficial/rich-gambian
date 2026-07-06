@@ -1,9 +1,12 @@
-export default function sitemap() {
+import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/seo";
+
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://rich-gambian.vercel.app",
+      url: SITE_URL,
       lastModified: new Date(),
-      changeFrequency: "monthly" as const,
+      changeFrequency: "weekly",
       priority: 1,
     },
   ];

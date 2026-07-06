@@ -49,16 +49,17 @@ export function AppHeader({
         <div className="mb-3 flex items-center justify-between gap-3">
           <div className="flex min-w-0 flex-1 items-center justify-center gap-3 sm:justify-start">
             <div className="relative h-6 w-8 shrink-0 overflow-hidden rounded-sm ring-1 ring-border">
-              <Image
-                src="/gm.svg"
-                alt="The Gambian Flag"
-                fill
-                className="object-cover"
-              />
+            <Image
+              src="/gm.svg"
+              alt="The Gambian Flag"
+              fill
+              className="object-cover"
+              priority
+            />
             </div>
-            <h1 className="truncate text-lg font-semibold tracking-tight sm:text-xl">
+            <p className="truncate text-lg font-semibold tracking-tight sm:text-xl">
               Spend The Gambia&apos;s Money
-            </h1>
+            </p>
           </div>
           <div className="flex shrink-0 items-center gap-1">
             {hasPurchases && onShare && (

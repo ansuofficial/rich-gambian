@@ -19,7 +19,7 @@ export function ProductGrid({
 }: ProductGridProps) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-      {products.map((product) => {
+      {products.map((product, index) => {
         const qty = getQuantity(product.id);
         const canBuy = balance >= product.price;
 
@@ -30,6 +30,7 @@ export function ProductGrid({
             quantity={qty}
             canBuy={canBuy}
             balance={balance}
+            priorityImage={index < 3}
             onBuy={onBuy}
             onSell={onSell}
           />
