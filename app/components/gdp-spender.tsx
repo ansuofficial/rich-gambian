@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useSpending } from "@/app/hooks/use-spending";
 import { AppHeader } from "@/app/components/app-header";
 import { ProductGrid } from "@/app/components/product-grid";
@@ -39,9 +39,12 @@ export function GdpSpender() {
   } = useSpending();
 
   const [shareOpen, setShareOpen] = useState(false);
+  const [receiptData, setReceiptData] = useState<ReceiptData | null>(null);
 
-  const receiptData: ReceiptData = useMemo(
-    () => ({
+  const shareEnabled = SHARE_ENABLED && purchases.length > 0;
+
+  const openShare = () => {
+    setReceiptData({
       balance,
       totalSpent,
       percentSpent,
@@ -49,12 +52,14 @@ export function GdpSpender() {
       purchases,
       categoryData,
       generatedAt: Date.now(),
-    }),
-    [balance, totalSpent, percentSpent, totalQuantity, purchases, categoryData]
-  );
+    });
+    setShareOpen(true);
+  };
 
-  const shareEnabled = SHARE_ENABLED && purchases.length > 0;
-  const openShare = () => setShareOpen(true);
+  const handleShareOpenChange = (open: boolean) => {
+    setShareOpen(open);
+    if (!open) setReceiptData(null);
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -87,11 +92,13 @@ export function GdpSpender() {
       {shareEnabled && (
         <>
           <ShareReceiptFab onClick={openShare} />
-          <ShareReceiptDialog
-            open={shareOpen}
-            onOpenChange={setShareOpen}
-            receiptData={receiptData}
-          />
+          {receiptData && (
+            <ShareReceiptDialog
+              open={shareOpen}
+              onOpenChange={handleShareOpenChange}
+              receiptData={receiptData}
+            />
+          )}
         </>
       )}
     </div>
