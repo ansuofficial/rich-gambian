@@ -1,0 +1,8 @@
+---
+pid: 113764
+cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
+command: "npx eslint --version"
+started_at: 2026-07-06T13:57:06.007Z
+running_for_ms: 5794999  
+---
+v9.39.0

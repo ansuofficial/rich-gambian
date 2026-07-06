@@ -1,0 +1,37 @@
+---
+pid: 112772
+cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
+command: "npm run build"
+started_at: 2026-07-06T13:51:11.182Z
+running_for_ms: 6149999  
+---
+
+> spend-gambia-money@0.1.0 build
+> next build
+
+▲ Next.js 16.2.10 (Turbopack)
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 12.3s
+  Running TypeScript ...
+  Finished TypeScript in 17.3s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/7) ...
+  Generating static pages using 7 workers (1/7) 
+  Generating static pages using 7 workers (3/7) 
+  Generating static pages using 7 workers (5/7) 
+✓ Generating static pages using 7 workers (7/7) in 1230ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /manifest.webmanifest
+├ ○ /robots.txt
+└ ○ /sitemap.xml
+
+
+○  (Static)  prerendered as static content
+

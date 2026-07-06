@@ -1,0 +1,41 @@
+---
+pid: 110520
+cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
+command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npx shadcn@latest add card badge progress separator dropdown-menu tooltip dialog sheet scroll-area alert-dialog sonner -y"
+started_at: 2026-07-06T12:11:25.394Z
+running_for_ms: 12135003 
+---
+- Checking registry.
+√ Checking registry.
+- Updating files.
+  - components\ui\card.tsx
+√ Created 11 files:
+  - components\ui\badge.tsx
+  - components\ui\progress.tsx
+  - components\ui\separator.tsx
+  - components\ui\dropdown-menu.tsx
+  - components\ui\tooltip.tsx
+  - components\ui\scroll-area.tsx
+  - components\ui\sonner.tsx
+  - components\ui\dialog.tsx
+  - components\ui\sheet.tsx
+  - components\ui\alert-dialog.tsx
+  - components\ui\button.tsx
+i Skipped 1 file: (files might be identical, use --overwrite to overwrite)
+The `tooltip` component has been added. Remember to wrap your app with the `TooltipProvider` component.
+
+```tsx title="app/layout.tsx"
+import { TooltipProvider } from "@/components/ui/tooltip"
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>
+        <TooltipProvider>{children}</TooltipProvider>
+      </body>
+    </html>
+  )
+}
+```
+
+

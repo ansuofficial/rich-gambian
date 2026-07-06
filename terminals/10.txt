@@ -1,0 +1,61 @@
+---
+pid: 11392
+cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
+command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npm install -D eslint@^9.39.0; npm run lint"
+started_at: 2026-07-06T13:44:48.124Z
+running_for_ms: 6529996  
+---
+
+added 13 packages, removed 9 packages, changed 9 packages, and audited 724 packages in 7s
+
+253 packages are looking for funding
+  run `npm fund` for details
+
+7 vulnerabilities (4 moderate, 3 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> spend-gambia-money@0.1.0 lint
+> eslint
+
+
+C:\Users\hp\Documents\personal projects\spend-gambia-money\app\components\gdp-spender.tsx
+  51:20  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\hp\Documents\personal projects\spend-gambia-money\app\components\gdp-spender.tsx:51:20
+  49 |       purchases,
+  50 |       categoryData,
+> 51 |       generatedAt: Date.now(),
+     |                    ^^^^^^^^^^ Cannot call impure function
+  52 |     }),
+  53 |     [balance, totalSpent, percentSpent, totalQuantity, purchases, categoryData]
+  54 |   );  react-hooks/purity
+
+C:\Users\hp\Documents\personal projects\spend-gambia-money\app\hooks\use-media-query.ts
+  10:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\hp\Documents\personal projects\spend-gambia-money\app\hooks\use-media-query.ts:10:5
+   8 |   useEffect(() => {
+   9 |     const mql = window.matchMedia(query);
+> 10 |     setMatches(mql.matches);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  11 |     const handler = (e: MediaQueryListEvent) => setMatches(e.matches);
+  12 |     mql.addEventListener("change", handler);
+  13 |     return () => mql.removeEventListener("change", handler);  react-hooks/set-state-in-effect
+
+✖ 2 problems (2 errors, 0 warnings)
+

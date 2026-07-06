@@ -1,0 +1,89 @@
+---
+pid: 104204
+cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
+command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npm run test:ci; npm run lint; npm run build"
+started_at: 2026-07-06T13:38:38.150Z
+running_for_ms: 6899993  
+---
+
+> spend-gambia-money@0.1.0 test:ci
+> vitest run
+
+
+ RUN  v4.1.10 C:/Users/hp/Documents/personal projects/spend-gambia-money
+
+ ✓ app/lib/share.test.ts (1 test) 56ms
+ ✓ app/hooks/use-spending.test.ts (6 tests) 64ms
+
+ Test Files  2 passed (2)
+      Tests  7 passed (7)
+   Start at  13:38:39
+   Duration  3.38s (transform 238ms, setup 0ms, import 1.55s, tests 121ms, environment 4.03s)
+
+
+> spend-gambia-money@0.1.0 lint
+> eslint
+
+
+Oops! Something went wrong! :(
+
+ESLint: 10.6.0
+
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Object'
+    |     property 'configs' -> object with constructor 'Object'
+    |     property 'flat' -> object with constructor 'Object'
+    |     ...
+    |     property 'plugins' -> object with constructor 'Object'
+    --- property 'react' closes the circle
+Referenced from: 
+    at JSON.stringify (<anonymous>)
+    at file:///C:/Users/hp/Documents/personal%20projects/spend-gambia-money/node_modules/@eslint/eslintrc/lib/shared/config-validator.js:308:45
+    at Array.map (<anonymous>)
+    at ConfigValidator.formatErrors (file:///C:/Users/hp/Documents/personal%20projects/spend-gambia-money/node_modules/@eslint/eslintrc/lib/shared/config-validator.js:299:23)
+    at ConfigValidator.validateConfigSchema (file:///C:/Users/hp/Documents/personal%20projects/spend-gambia-money/node_modules/@eslint/eslintrc/lib/shared/config-validator.js:330:84)
+    at ConfigArrayFactory._normalizeConfigData (file:///C:/Users/hp/Documents/personal%20projects/spend-gambia-money/node_modules/@eslint/eslintrc/lib/config-array-factory.js:676:19)
+    at ConfigArrayFactory._loadConfigData (file:///C:/Users/hp/Documents/personal%20projects/spend-gambia-money/node_modules/@eslint/eslintrc/lib/config-array-factory.js:641:21)
+    at ConfigArrayFactory._loadExtendedShareableConfig (file:///C:/Users/hp/Documents/personal%20projects/spend-gambia-money/node_modules/@eslint/eslintrc/lib/config-array-factory.js:946:21)
+    at ConfigArrayFactory._loadExtends (file:///C:/Users/hp/Documents/personal%20projects/spend-gambia-money/node_modules/@eslint/eslintrc/lib/config-array-factory.js:814:25)
+    at ConfigArrayFactory._normalizeObjectConfigDataBody (file:///C:/Users/hp/Documents/personal%20projects/spend-gambia-money/node_modules/@eslint/eslintrc/lib/config-array-factory.js:752:25)
+
+> spend-gambia-money@0.1.0 build
+> next build
+
+▲ Next.js 16.2.10 (Turbopack)
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 16.4s
+  Running TypeScript ...
+
+  We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+  The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+  - include was updated to add '.next/dev/types/**/*.ts'
+
+  The following mandatory changes were made to your tsconfig.json:
+
+  - jsx was set to react-jsx (next.js uses the React automatic runtime)
+
+  Finished TypeScript in 20.7s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/7) ...
+  Generating static pages using 7 workers (1/7) 
+  Generating static pages using 7 workers (3/7) 
+  Generating static pages using 7 workers (5/7) 
+✓ Generating static pages using 7 workers (7/7) in 948ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /manifest.webmanifest
+├ ○ /robots.txt
+└ ○ /sitemap.xml
+
+
+○  (Static)  prerendered as static content
+

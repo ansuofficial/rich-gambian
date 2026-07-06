@@ -1,0 +1,67 @@
+---
+pid: 29684
+cwd: "C:\Users\hp\Documents\personal projects\spend-gambia-money"
+command: "cd \"C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\"; npm run test:ci; npm run test:products; npm run build"
+started_at: 2026-07-06T12:17:50.453Z
+running_for_ms: 11750001 
+---
+
+> spend-gambia-money@0.1.0 test:ci
+> vitest run
+
+
+ RUN  v4.1.10 C:/Users/hp/Documents/personal projects/spend-gambia-money
+
+ ✓ app/lib/share.test.ts (1 test) 68ms
+ ✓ app/hooks/use-spending.test.ts (6 tests) 54ms
+
+ Test Files  2 passed (2)
+      Tests  7 passed (7)
+   Start at  12:17:53
+   Duration  40.48s (transform 308ms, setup 0ms, import 7.00s, tests 122ms, environment 66.63s)
+
+
+> spend-gambia-money@0.1.0 test:products
+> npx tsx scripts/validate-products.ts
+
+Validated 18 products — all IDs unique.
+
+> spend-gambia-money@0.1.0 build
+> next build --turbopack
+
+   ▲ Next.js 15.5.4 (Turbopack)
+
+   Creating an optimized production build ...
+ ✓ Finished writing to disk in 1025ms
+ ✓ Compiled successfully in 12.4s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/6) ...
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+   Generating static pages (1/6) 
+   Generating static pages (2/6) 
+   Generating static pages (4/6) 
+ ✓ Generating static pages (6/6)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                         Size  First Load JS
+┌ ○ /                             136 kB         316 kB
+├ ○ /_not-found                      0 B         180 kB
+└ ○ /sitemap.xml                     0 B            0 B
++ First Load JS shared by all     194 kB
+  ├ chunks/2afe1dad412af293.js   62.6 kB
+  ├ chunks/4be8e331ab454f76.js   75.1 kB
+  ├ chunks/75a3f12660976f11.js     13 kB
+  ├ chunks/bd703345aaf467d4.css  13.3 kB
+  └ other shared chunks (total)  29.7 kB
+
+
+○  (Static)  prerendered as static content
+
+uncaughtException [Error: EPERM: operation not permitted, open 'C:\Users\hp\Documents\personal projects\spend-gambia-money\.next\trace'] {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'C:\\Users\\hp\\Documents\\personal projects\\spend-gambia-money\\.next\\trace'
+}
